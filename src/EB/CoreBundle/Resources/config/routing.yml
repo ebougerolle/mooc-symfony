@@ -1,0 +1,11 @@
+# src/EB/CoreBundle/Resources/config/routing.yml
+
+eb_core_home:
+    path: /
+    defaults:
+        _controller: EBCoreBundle:Core:index
+
+eb_core_contact:
+    path: /contact
+    defaults:
+        _controller: EBCoreBundle:Core:contact

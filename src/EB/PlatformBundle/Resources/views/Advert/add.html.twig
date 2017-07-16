@@ -1,0 +1,16 @@
+{# src/EB/PlatformBundle/Resources/views/Advert/add.html.twig #}
+
+{% extends "EBPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+    Ajouter une annonce - {{ parent() }}
+{% endblock %}
+
+{% block ebplatform_body %}
+
+    <h2>Ajouter une annonce</h2>
+
+    {{ include("EBPlatformBundle:Advert:form.html.twig") }}
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+<?php
+
+namespace EB\CoreBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
+
+class CoreController extends Controller
+{
+    // La page d'accueil
+    public function indexAction()
+    {
+        // On retourne simplement la vue de la page d'accueil
+        // L'affichage des 3 dernières annonces utilisera le contrôleur déjà existant dans PlatformBundle
+        return $this->render('EBCoreBundle:Core:index.html.twig');
+
+        // La méthode longue $this->get('templating')->renderResponse('...') est parfaitement valable
+    }
+
+    // La page de contact
+    public function contactAction(Request $request)
+    {
+        $session = $request->getSession();
+
+        $session->getFlashBag()->add('info', 'La page de contact n’est pas encore disponible, merci de revenir plus tard.');
+
+        // Enfin, on redirige simplement vers la page d'accueil
+        return $this->redirectToRoute('eb_core_home');
+
+        // La méthode longue new RedirectResponse($this->get('router')->generate('eb_core_home')); est parfaitement valable
+    }
+}

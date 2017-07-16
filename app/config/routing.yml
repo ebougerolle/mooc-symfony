@@ -1,0 +1,6 @@
+eb_core:
+    resource: "@EBCoreBundle/Resources/config/routing.yml"
+
+eb_platform:
+    resource: "@EBPlatformBundle/Resources/config/routing.yml"
+    prefix:   /platform

@@ -1,0 +1,40 @@
+# src/EB/PlatformBundle/Resources/config/routing.yml
+
+eb_platform_home:
+    path:      /{page}
+    defaults:
+        _controller: EBPlatformBundle:Advert:index
+        page:        1
+    requirements:
+        page: \d*
+    
+eb_platform_view:
+    path:      /advert/{id}
+    defaults:
+        _controller: EBPlatformBundle:Advert:view
+    requirements:
+        id: \d+
+
+eb_platform_add:
+    path:      /add
+    defaults:
+        _controller: EBPlatformBundle:Advert:add
+
+eb_platform_edit:
+    path:      /edit/{id}
+    defaults:
+        _controller: EBPlatformBundle:Advert:edit
+    requirements:
+        id: \d+
+
+eb_platform_delete:
+    path:      /delete/{id}
+    defaults:
+        _controller: EBPlatformBundle:Advert:delete
+    requirements:
+        id: \d+
+
+eb_platform_test:
+    path:      /test
+    defaults:
+        _controller: EBPlatformBundle:Advert:test
